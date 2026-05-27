@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ - VIETPURE TRAVEL</title>
+    <meta name="description" content="VIETPURE - TRAVEL PURE - EXPERIENCE VIETNAM">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'vp-blue': '#0b3954', /* Màu xanh dương từ logo */
+                        'vp-teal': '#118a96', /* Màu xanh ngọc từ logo */
+                        'vp-gold': '#d79922', /* Màu vàng từ logo */
+                    },
+                    fontFamily: {
+                        sans: ['Roboto', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .tour-card:hover .tour-img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-gray-50">
+
+    <!-- Top Bar -->
+    <div class="bg-vp-blue text-white text-xs md:text-sm py-2">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <p><i class="fa fa-map-marker-alt text-vp-gold mr-1"></i> TP Thủ Đức, TP HCM</p>
+            </div>
+            <div class="hidden md:flex items-center gap-6">
+                <a href="#" class="hover:text-vp-gold transition">Giới thiệu</a>
+                <a href="#" class="hover:text-vp-gold transition">Liên hệ</a>
+                <div class="flex gap-3">
+                    <a href="#" class="hover:text-vp-gold transition"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-vp-gold transition"><i class="fa fa-envelope"></i></a>
+                    <a href="#" class="hover:text-vp-gold transition"><i class="fa fa-phone"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-vp-blue text-2xl focus:outline-none">
+                <i class="fa fa-bars"></i>
+            </button>
+
+            <!-- Logo (Sử dụng file logo.jpg của bạn) -->
+            <a href="/" class="flex-shrink-0 mx-auto md:mx-0">
+                <img src="logo.jpg" alt="VIETPURE Logo" class="h-16 md:h-20 object-contain" onerror="this.src='https://via.placeholder.com/200x80?text=VIETPURE+LOGO'">
+            </a>
+
+            <!-- Search Bar -->
+            <div class="hidden md:flex flex-1 max-w-xl mx-8">
+                <div class="relative w-full">
+                    <input type="text" placeholder="Nhập thông tin tìm kiếm..." class="w-full border-2 border-gray-200 rounded-full py-2 px-6 focus:outline-none focus:border-vp-teal transition">
+                    <button class="absolute right-1 top-1 bg-vp-teal text-white w-9 h-9 rounded-full hover:bg-vp-blue transition">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Hotlines -->
+            <div class="hidden lg:flex flex-col text-right text-sm font-medium">
+                <a href="tel:0374519369" class="text-vp-blue hover:text-vp-teal"><i class="fa fa-phone-alt text-vp-gold mr-1"></i> 0374.519.369 (Zalo)</a>
+                <a href="tel:0374519369" class="text-vp-blue hover:text-vp-teal"><i class="fa fa-phone-alt text-vp-gold mr-1"></i> 0374.519.369 (Zalo)</a>
+            </div>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:block bg-vp-teal text-white">
+            <div class="container mx-auto px-4">
+                <ul class="flex justify-center space-x-8 text-sm font-semibold uppercase">
+                    <li><a href="#" class="block py-4 hover:text-vp-gold transition"><i class="fa fa-home"></i> Trang chủ</a></li>
+                    <li><a href="#" class="block py-4 hover:text-vp-gold transition">Giới thiệu</a></li>
+                    <li class="relative group">
+                        <a href="#" class="flex items-center py-4 hover:text-vp-gold transition">Team Building <i class="fa fa-angle-down ml-1"></i></a>
+                        <!-- Dropdown Team Building -->
+                        <ul class="absolute left-0 top-full mt-0 w-60 bg-white shadow-lg rounded-b-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 text-gray-700 font-normal normal-case text-base">
+                            <li><a href="#" class="block px-6 py-3 border-b border-gray-100 hover:text-vp-teal hover:bg-gray-50 transition">TBD Doanh Nghiệp</a></li>
+                            <li><a href="#" class="block px-6 py-3 border-b border-gray-100 hover:text-vp-teal hover:bg-gray-50 transition">Hoạt động CSR</a></li>
+                            <li><a href="#" class="block px-6 py-3 border-b border-gray-100 hover:text-vp-teal hover:bg-gray-50 transition">Học Tập – Ngoại Khóa</a></li>
+                            <li><a href="#" class="block px-6 py-3 hover:text-vp-teal hover:bg-gray-50 transition">Event – Party</a></li>
+                        </ul>
+                    </li>
+                    <li class="relative group">
+                        <a href="#" class="flex items-center py-4 hover:text-vp-gold transition">Tour Hàng Tuần <i class="fa fa-angle-down ml-1"></i></a>
+                        <!-- Dropdown Tour Hàng Tuần -->
+                        <ul class="absolute left-0 top-full mt-0 w-60 bg-white shadow-lg rounded-b-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 text-gray-700 font-normal normal-case text-base">
+                            <li><a href="#" class="block px-6 py-3 border-b border-gray-100 hover:text-vp-teal hover:bg-gray-50 transition">Tour Lễ – Tết</a></li>
+                            <li><a href="#" class="block px-6 py-3 border-b border-gray-100 hover:text-vp-teal hover:bg-gray-50 transition">Tour Nước Ngoài</a></li>
+                            <li><a href="#" class="block px-6 py-3 hover:text-vp-teal hover:bg-gray-50 transition">Tour Trong Nước</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" class="block py-4 hover:text-vp-gold transition">Tour Văn Hóa</a></li>
+                    <li><a href="#" class="block py-4 hover:text-vp-gold transition">Tour Luxury</a></li>
+                    <li><a href="#" class="block py-4 hover:text-vp-gold transition">Dịch Vụ Khác</a></li>
+                    <li class="relative group">
+                        <a href="#" class="flex items-center py-4 hover:text-vp-gold transition">Cẩm Nang và Đối Tác <i class="fa fa-angle-down ml-1"></i></a>
+                        <!-- Dropdown Cẩm Nang và Đối Tác -->
+                        <ul class="absolute right-0 md:left-0 top-full mt-0 w-60 bg-white shadow-lg rounded-b-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 text-gray-700 font-normal normal-case text-base">
+                            <li><a href="#" class="block px-6 py-3 border-b border-gray-100 hover:text-vp-teal hover:bg-gray-50 transition">Cẩm Nang Du Lịch</a></li>
+                            <li><a href="#" class="block px-6 py-3 hover:text-vp-teal hover:bg-gray-50 transition">Đối Tác Liên Kết</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg h-screen overflow-y-auto pb-24">
+            <ul class="text-gray-700 font-medium">
+                <li><a href="#" class="block px-6 py-3 border-b border-gray-50 hover:bg-gray-50 text-vp-teal">Trang chủ</a></li>
+                <li><a href="#" class="block px-6 py-3 border-b border-gray-50 hover:bg-gray-50">Giới thiệu</a></li>
+                
+                <!-- Team Building Mobile -->
+                <li class="border-b border-gray-50">
+                    <div class="block px-6 py-3 bg-gray-50 font-semibold text-vp-blue">Team Building</div>
+                    <ul class="bg-white font-normal text-gray-600">
+                        <li><a href="#" class="block pl-10 pr-6 py-2 border-b border-gray-50 hover:text-vp-teal text-sm">TBD Doanh Nghiệp</a></li>
+                        <li><a href="#" class="block pl-10 pr-6 py-2 border-b border-gray-50 hover:text-vp-teal text-sm">Hoạt động CSR</a></li>
+                        <li><a href="#" class="block pl-10 pr-6 py-2 border-b border-gray-50 hover:text-vp-teal text-sm">Học Tập – Ngoại Khóa</a></li>
+                        <li><a href="#" class="block pl-10 pr-6 py-2 hover:text-vp-teal text-sm">Event – Party</a></li>
+                    </ul>
+                </li>
+                
+                <!-- Tour Hàng Tuần Mobile -->
+                <li class="border-b border-gray-50">
+                    <div class="block px-6 py-3 bg-gray-50 font-semibold text-vp-blue">Tour Hàng Tuần</div>
+                    <ul class="bg-white font-normal text-gray-600">
+                        <li><a href="#" class="block pl-10 pr-6 py-2 border-b border-gray-50 hover:text-vp-teal text-sm">Tour Lễ – Tết</a></li>
+                        <li><a href="#" class="block pl-10 pr-6 py-2 border-b border-gray-50 hover:text-vp-teal text-sm">Tour Nước Ngoài</a></li>
+                        <li><a href="#" class="block pl-10 pr-6 py-2 hover:text-vp-teal text-sm">Tour Trong Nước</a></li>
+                    </ul>
+                </li>
+                
+                <li><a href="#" class="block px-6 py-3 border-b border-gray-50 hover:bg-gray-50">Tour Văn Hóa</a></li>
+                <li><a href="#" class="block px-6 py-3 border-b border-gray-50 hover:bg-gray-50">Tour Luxury</a></li>
+                <li><a href="#" class="block px-6 py-3 border-b border-gray-50 hover:bg-gray-50">Dịch Vụ Khác</a></li>
+                
+                <!-- Cẩm Nang và Đối Tác Mobile -->
+                <li class="border-b border-gray-50">
+                    <div class="block px-6 py-3 bg-gray-50 font-semibold text-vp-blue">Cẩm Nang và Đối Tác</div>
+                    <ul class="bg-white font-normal text-gray-600">
+                        <li><a href="#" class="block pl-10 pr-6 py-2 border-b border-gray-50 hover:text-vp-teal text-sm">Cẩm Nang Du Lịch</a></li>
+                        <li><a href="#" class="block pl-10 pr-6 py-2 hover:text-vp-teal text-sm">Đối Tác Liên Kết</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Banner (Sử dụng file bìa.jpg của bạn) -->
+    <section class="w-full bg-gray-900 relative">
+        <img src="bìa.jpg" alt="Banner Cờ Lau Dựng Nghiệp" class="w-full h-auto object-cover max-h-[700px] min-h-[300px]" onerror="this.src='https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&q=80&w=2000'">
+        
+        <!-- Overlay mờ (Optional, có thể bỏ nếu ảnh đã có chữ đẹp) -->
+        <!-- <div class="absolute inset-0 bg-black bg-opacity-20 pointer-events-none"></div> -->
+    </section>
+
+    <!-- About Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center gap-10">
+                <div class="w-full md:w-1/2 relative rounded-xl overflow-hidden shadow-xl group">
+                    <img src="https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&q=80&w=800" alt="Vietpure Travel" class="w-full h-[400px] object-cover transition duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30">
+                        <button class="w-16 h-16 bg-white bg-opacity-80 rounded-full text-vp-blue text-2xl flex items-center justify-center hover:bg-vp-teal hover:text-white transition duration-300">
+                            <i class="fa fa-play ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2">
+                    <h4 class="text-vp-gold font-bold uppercase tracking-wider mb-2">Về chúng tôi</h4>
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-vp-blue mb-6">Trải Nghiệm Việt Nam Cùng VIETPURE</h2>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        <strong>VIETPURE</strong> được thành lập với sứ mệnh mang đến cho khách hàng những trải nghiệm du lịch tuyệt vời, khám phá vẻ đẹp thuần khiết của thiên nhiên và văn hóa Việt Nam cũng như quốc tế.
+                    </p>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Chúng tôi cam kết cung cấp các dịch vụ chất lượng cao, đáp ứng nhu cầu đa dạng của khách hàng từ du lịch nghỉ dưỡng, du lịch khám phá đến du lịch doanh nghiệp và Team Building.
+                    </p>
+                    <a href="tel:0374519369" class="inline-block bg-vp-teal text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-vp-blue hover:shadow-xl transition duration-300">
+                        <i class="fa fa-phone-alt mr-2"></i> Liên Hệ Hotline: 0374.519.369
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Building Tours -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-end mb-10 border-b-2 border-gray-200 pb-4">
+                <div>
+                    <h2 class="text-3xl font-serif font-bold text-vp-blue flex items-center gap-2">
+                        <i class="fa fa-users text-vp-teal"></i> Team Building
+                    </h2>
+                </div>
+                <a href="#" class="text-vp-teal hover:text-vp-blue font-medium flex items-center gap-1">
+                    Xem thêm <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden tour-card transition duration-300 hover:shadow-xl">
+                    <div class="relative overflow-hidden h-60">
+                        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=600" alt="Ngoại khóa" class="w-full h-full object-cover tour-img transition duration-500">
+                        <div class="absolute top-3 left-3 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded">HOT</div>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-lg text-gray-800 mb-3 line-clamp-2 hover:text-vp-teal cursor-pointer">NGOẠI KHÓA KDT NGÃ BA GIỒNG – ĐẤT THÉP FARM</h3>
+                        <div class="text-sm text-gray-500 space-y-2 mb-4">
+                            <p><i class="fa fa-clock text-vp-gold w-5 text-center"></i> 1 Ngày</p>
+                            <p><i class="fa fa-bus text-vp-gold w-5 text-center"></i> Xe 45 chỗ</p>
+                            <p><i class="fa fa-map-marker-alt text-vp-gold w-5 text-center"></i> Củ Chi</p>
+                        </div>
+                        <div class="border-t border-gray-100 pt-4 flex justify-between items-center">
+                            <span class="text-xl font-bold text-red-600">450,000 ₫</span>
+                            <button class="bg-gray-100 text-vp-blue hover:bg-vp-teal hover:text-white rounded-full w-10 h-10 flex items-center justify-center transition">
+                                <i class="fa fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden tour-card transition duration-300 hover:shadow-xl">
+                    <div class="relative overflow-hidden h-60">
+                        <img src="https://images.unsplash.com/photo-1523580494112-071d45815a75?auto=format&fit=crop&q=80&w=600" alt="Ngoại khóa" class="w-full h-full object-cover tour-img transition duration-500">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-lg text-gray-800 mb-3 line-clamp-2 hover:text-vp-teal cursor-pointer">TeamBuilding Long Hải 2 Ngày 1 Đêm Gắn Kết</h3>
+                        <div class="text-sm text-gray-500 space-y-2 mb-4">
+                            <p><i class="fa fa-clock text-vp-gold w-5 text-center"></i> 2 Ngày 1 Đêm</p>
+                            <p><i class="fa fa-bus text-vp-gold w-5 text-center"></i> Xe ô tô đời mới</p>
+                            <p><i class="fa fa-map-marker-alt text-vp-gold w-5 text-center"></i> TP HCM - Long Hải</p>
+                        </div>
+                        <div class="border-t border-gray-100 pt-4 flex justify-between items-center">
+                            <span class="text-xl font-bold text-red-600">2,290,000 ₫</span>
+                            <button class="bg-gray-100 text-vp-blue hover:bg-vp-teal hover:text-white rounded-full w-10 h-10 flex items-center justify-center transition">
+                                <i class="fa fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden tour-card transition duration-300 hover:shadow-xl">
+                    <div class="relative overflow-hidden h-60">
+                        <img src="https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?auto=format&fit=crop&q=80&w=600" alt="Camping" class="w-full h-full object-cover tour-img transition duration-500">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-lg text-gray-800 mb-3 line-clamp-2 hover:text-vp-teal cursor-pointer">Camping BBQ tại Nomad Villa Bảo Lộc</h3>
+                        <div class="text-sm text-gray-500 space-y-2 mb-4">
+                            <p><i class="fa fa-clock text-vp-gold w-5 text-center"></i> 2 Ngày 1 Đêm</p>
+                            <p><i class="fa fa-bus text-vp-gold w-5 text-center"></i> Xe ô tô đời mới</p>
+                            <p><i class="fa fa-map-marker-alt text-vp-gold w-5 text-center"></i> Bảo Lộc</p>
+                        </div>
+                        <div class="border-t border-gray-100 pt-4 flex justify-between items-center">
+                            <span class="text-xl font-bold text-red-600">450,000 ₫</span>
+                            <button class="bg-gray-100 text-vp-blue hover:bg-vp-teal hover:text-white rounded-full w-10 h-10 flex items-center justify-center transition">
+                                <i class="fa fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden tour-card transition duration-300 hover:shadow-xl">
+                    <div class="relative overflow-hidden h-60">
+                        <img src="https://images.unsplash.com/photo-1511527661048-7fe73d85e9a4?auto=format&fit=crop&q=80&w=600" alt="Year End Party" class="w-full h-full object-cover tour-img transition duration-500">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-lg text-gray-800 mb-3 line-clamp-2 hover:text-vp-teal cursor-pointer">Tổ Chức Year End Party - Gala Dinner Trọn Gói</h3>
+                        <div class="text-sm text-gray-500 space-y-2 mb-4">
+                            <p><i class="fa fa-clock text-vp-gold w-5 text-center"></i> 1 Ngày</p>
+                            <p><i class="fa fa-building text-vp-gold w-5 text-center"></i> Trung tâm tiệc</p>
+                            <p><i class="fa fa-map-marker-alt text-vp-gold w-5 text-center"></i> TP HCM</p>
+                        </div>
+                        <div class="border-t border-gray-100 pt-4 flex justify-between items-center">
+                            <span class="text-xl font-bold text-red-600">550,000 ₫</span>
+                            <button class="bg-gray-100 text-vp-blue hover:bg-vp-teal hover:text-white rounded-full w-10 h-10 flex items-center justify-center transition">
+                                <i class="fa fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-16 bg-vp-blue text-white relative">
+        <!-- Background overlay pattern -->
+        <div class="absolute inset-0 opacity-10" style="background-image: url('https://www.transparenttextures.com/patterns/cubes.png');"></div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="flex flex-col md:flex-row gap-12">
+                <div class="w-full md:w-1/3">
+                    <h2 class="text-4xl font-serif font-bold mb-4">Vì sao chọn<br><span class="text-vp-gold">VIETPURE?</span></h2>
+                    <div class="w-20 h-1 bg-vp-teal mb-6"></div>
+                    <p class="text-gray-300 leading-relaxed text-lg">
+                        Đội ngũ nhân viên của VIETPURE được đào tạo chuyên nghiệp, có kinh nghiệm và tâm huyết trong ngành du lịch. Chúng tôi luôn sẵn sàng hỗ trợ 24/7 để đảm bảo mỗi chuyến đi đều là một trải nghiệm tuyệt vời và đáng nhớ.
+                    </p>
+                </div>
+                
+                <div class="w-full md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-8">
+                    <!-- Feature 1 -->
+                    <div class="flex items-start gap-4">
+                        <div class="w-14 h-14 rounded-full bg-white bg-opacity-10 flex items-center justify-center flex-shrink-0 text-vp-gold text-2xl">
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Đánh giá tin cậy</h3>
+                            <p class="text-gray-400">Hệ thống của chúng tôi được đánh giá xuất sắc nhiều năm liền từ hàng ngàn khách hàng.</p>
+                        </div>
+                    </div>
+                    <!-- Feature 2 -->
+                    <div class="flex items-start gap-4">
+                        <div class="w-14 h-14 rounded-full bg-white bg-opacity-10 flex items-center justify-center flex-shrink-0 text-vp-gold text-2xl">
+                            <i class="fa fa-headset"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Hỗ trợ 24/7</h3>
+                            <p class="text-gray-400">Nhân viên CSKH chuyên nghiệp luôn sẵn sàng phục vụ và giải quyết vấn đề của bạn.</p>
+                        </div>
+                    </div>
+                    <!-- Feature 3 -->
+                    <div class="flex items-start gap-4">
+                        <div class="w-14 h-14 rounded-full bg-white bg-opacity-10 flex items-center justify-center flex-shrink-0 text-vp-gold text-2xl">
+                            <i class="fa fa-heart"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Trải nghiệm tuyệt vời</h3>
+                            <p class="text-gray-400">Thiết kế các chương trình tour độc đáo, mới lạ mang đậm chất văn hóa bản địa.</p>
+                        </div>
+                    </div>
+                    <!-- Feature 4 -->
+                    <div class="flex items-start gap-4">
+                        <div class="w-14 h-14 rounded-full bg-white bg-opacity-10 flex items-center justify-center flex-shrink-0 text-vp-gold text-2xl">
+                            <i class="fa fa-shield-alt"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">An toàn tuyệt đối</h3>
+                            <p class="text-gray-400">Mua bảo hiểm du lịch đầy đủ, đối tác vận chuyển và lưu trú đạt chuẩn an toàn.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 pt-16 pb-8 border-t-4 border-vp-teal">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                <!-- Col 1 -->
+                <div>
+                    <h3 class="text-white text-lg font-bold uppercase mb-6 border-b border-gray-700 pb-2 inline-block">Thông Tin Liên Hệ</h3>
+                    <p class="font-bold text-white mb-3">VIETPURE TRAVEL JSC</p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i class="fa fa-map-marker-alt text-vp-gold mt-1"></i>
+                            <span>243/83 Đường Tôn Đản, Phường Khánh Hội, TP HCM</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa fa-phone-alt text-vp-gold mt-1"></i>
+                            <span>(+84) 374 519 369</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa fa-envelope text-vp-gold mt-1"></i>
+                            <span>Info@vietpure.com.vn</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Col 2 -->
+                <div>
+                    <h3 class="text-white text-lg font-bold uppercase mb-6 border-b border-gray-700 pb-2 inline-block">Hỗ Trợ Tư Vấn</h3>
+                    <div class="bg-gray-800 p-4 rounded-lg mb-4">
+                        <p class="text-sm text-gray-400 mb-1">Hotline Booking:</p>
+                        <a href="tel:0374519369" class="text-2xl font-bold text-vp-gold block">0374.519.369</a>
+                    </div>
+                    <ul class="space-y-2">
+                        <li>- CSKH 1: <a href="tel:0374519369" class="text-white hover:text-vp-teal">0374.519.369</a></li>
+                        <li>- CSKH 2: <a href="tel:0374519369" class="text-white hover:text-vp-teal">0374.519.369</a></li>
+                    </ul>
+                    <div class="flex gap-3 mt-6">
+                        <a href="#" class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white hover:-translate-y-1 transition duration-300"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-blue-400 flex items-center justify-center text-white hover:-translate-y-1 transition duration-300"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-red-600 flex items-center justify-center text-white hover:-translate-y-1 transition duration-300"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 3 -->
+                <div>
+                    <h3 class="text-white text-lg font-bold uppercase mb-6 border-b border-gray-700 pb-2 inline-block">Thông Tin Cần Biết</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="hover:text-vp-teal transition flex items-center gap-2"><i class="fa fa-angle-right text-xs"></i> Về chúng tôi</a></li>
+                        <li><a href="#" class="hover:text-vp-teal transition flex items-center gap-2"><i class="fa fa-angle-right text-xs"></i> Điều khoản chung</a></li>
+                        <li><a href="#" class="hover:text-vp-teal transition flex items-center gap-2"><i class="fa fa-angle-right text-xs"></i> Chính sách thanh toán</a></li>
+                        <li><a href="#" class="hover:text-vp-teal transition flex items-center gap-2"><i class="fa fa-angle-right text-xs"></i> Chính sách bảo mật</a></li>
+                        <li><a href="#" class="hover:text-vp-teal transition flex items-center gap-2"><i class="fa fa-angle-right text-xs"></i> Chính sách hủy dịch vụ</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4 -->
+                <div>
+                    <h3 class="text-white text-lg font-bold uppercase mb-6 border-b border-gray-700 pb-2 inline-block">Đăng Ký Nhận Tin</h3>
+                    <p class="text-sm mb-4">Để lại email để nhận ngay những ưu đãi tour mới nhất từ VIETPURE.</p>
+                    <form class="flex flex-col gap-3">
+                        <input type="email" placeholder="Email của bạn..." class="bg-gray-800 border border-gray-700 text-white px-4 py-2 rounded focus:outline-none focus:border-vp-teal">
+                        <button type="button" class="bg-vp-teal text-white font-bold py-2 px-4 rounded hover:bg-vp-blue transition">Đăng ký ngay</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 text-center text-sm">
+                <p>Copyright © 2026 <strong>VIETPURE TRAVEL</strong>. Thiết kế lại dựa trên cấu trúc yêu cầu.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Fixed Action Buttons (Zalo, Phone) -->
+    <div class="fixed bottom-6 right-6 flex flex-col gap-3 z-50">
+        <a href="tel:0374519369" class="w-14 h-14 bg-red-600 rounded-full flex items-center justify-center text-white text-2xl shadow-lg hover:scale-110 transition animate-bounce">
+            <i class="fa fa-phone-alt"></i>
+        </a>
+        <a href="https://zalo.me/0374519369" target="_blank" class="w-14 h-14 bg-blue-500 rounded-full flex items-center justify-center text-white text-3xl shadow-lg hover:scale-110 transition">
+            <!-- Icon Zalo Custom or Text -->
+            <span class="font-bold text-sm tracking-tighter">Zalo</span>
+        </a>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Toggle mobile menu
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            var menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+            } else {
+                menu.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
